@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin VB.Form Form1 
    BackColor       =   &H00FFFF80&
-   Caption         =   "211Íõ³ÉÖ®ÍòÀú±í"
+   Caption         =   "211çŽ‹æˆä¹‹ä¸‡åŽ†è¡¨"
    ClientHeight    =   4470
    ClientLeft      =   120
    ClientTop       =   450
@@ -9,7 +9,7 @@ Begin VB.Form Form1
    LinkTopic       =   "Form1"
    ScaleHeight     =   4470
    ScaleWidth      =   5880
-   StartUpPosition =   3  '´°¿ÚÈ±Ê¡
+   StartUpPosition =   3  'çª—å£ç¼ºçœ
    Begin VB.TextBox Text2 
       Height          =   495
       Left            =   2040
@@ -25,7 +25,7 @@ Begin VB.Form Form1
       Width           =   1215
    End
    Begin VB.CommandButton Command1 
-      Caption         =   "Êä³ö½á¹û"
+      Caption         =   "è¾“å‡ºç»“æžœ"
       Height          =   495
       Left            =   4200
       TabIndex        =   0
@@ -34,7 +34,7 @@ Begin VB.Form Form1
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "¸ÃÌìÊÇÐÇÆÚ£º"
+      Caption         =   "è¯¥å¤©æ˜¯æ˜ŸæœŸï¼š"
       Height          =   495
       Left            =   720
       TabIndex        =   5
@@ -43,7 +43,7 @@ Begin VB.Form Form1
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
-      Caption         =   "¸ñÊ½£ºÄê.ÔÂ.ÈÕ£¨Èç2000.01.01£©"
+      Caption         =   "æ ¼å¼ï¼šå¹´.æœˆ.æ—¥ï¼ˆå¦‚2000.01.01ï¼‰"
       Height          =   495
       Left            =   840
       TabIndex        =   3
@@ -52,7 +52,7 @@ Begin VB.Form Form1
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "ÇëÊäÈëÈÕÆÚ£º"
+      Caption         =   "è¯·è¾“å…¥æ—¥æœŸï¼š"
       Height          =   375
       Left            =   720
       TabIndex        =   1
@@ -96,12 +96,16 @@ If Month > 2 And yeardiff Mod 4 = 0 Then
   d2 = 59 + (monthdiff - 2) * 30 + i
  ElseIf Month > 1 Then
   d2 = 31
- Else: d2 = 0
+ Else d2 = 0
 End If
 
 d3 = daydiff
 
-If Year >= 2000 Then d = d1 + d2 + d3: diff = d Mod 7 + 1: result = Mid("ÁùÌìÒ»¶þÈýËÄÎå", diff, 1) Else: d = Abs(d1 - d2 - d3): diff = d Mod 7 + 1: result = Mid("ÁùÎåËÄÈý¶þÒ»Ìì", diff, 1)
+If Year >= 2000 
+   Then d = d1 + d2 + d3: diff = d Mod 7 + 1: result = Mid("å…­å¤©ä¸€äºŒä¸‰å››äº”", diff, 1) 
+   Else d = Abs(d1 - d2 - d3): diff = d Mod 7 + 1: result = Mid("å…­äº”å››ä¸‰äºŒä¸€å¤©", diff, 1)
+End If
+
 Text2.Text = result
 
 End Sub
